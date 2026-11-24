@@ -1,0 +1,10 @@
+stages:
+  - test
+
+check:
+  stage: test
+  image: alpine:3.20
+  script:
+    - test -f Dockerfile
+    - grep -q "Версія" site/index.html
+    - echo "Перевірку пройдено"
